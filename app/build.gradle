@@ -17,6 +17,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+        xiaomi {
+            manifestPlaceholders = [CHANNEL:"xiaomi"];
+        }
+        _360 {
+            manifestPlaceholders = [CHANNEL:"_360"];
+        }
+        huawei {
+            manifestPlaceholders = [CHANNEL:"huawei"];
+        }
+        meizu {
+            manifestPlaceholders = [CHANNEL:"meizu"];
+        }
+    }
+
 }
 
 dependencies {
@@ -28,4 +43,5 @@ dependencies {
     compile 'com.google.code.gson:gson:2.7'
     compile 'com.jakewharton:butterknife:8.0.1'
     apt 'com.jakewharton:butterknife-compiler:8.0.1'
+    compile 'com.umeng.analytics:analytics:latest.integration'
 }
