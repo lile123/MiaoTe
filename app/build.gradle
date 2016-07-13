@@ -19,16 +19,16 @@ android {
     }
     productFlavors {
         xiaomi {
-            manifestPlaceholders = [CHANNEL:"xiaomi"];
+            manifestPlaceholders = [CHANNEL: "xiaomi"];
         }
         _360 {
-            manifestPlaceholders = [CHANNEL:"_360"];
+            manifestPlaceholders = [CHANNEL: "_360"];
         }
         huawei {
-            manifestPlaceholders = [CHANNEL:"huawei"];
+            manifestPlaceholders = [CHANNEL: "huawei"];
         }
         meizu {
-            manifestPlaceholders = [CHANNEL:"meizu"];
+            manifestPlaceholders = [CHANNEL: "meizu"];
         }
     }
 
@@ -37,11 +37,12 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.3.0'
     compile project(':httplibrary')
     compile project(':PullToRefreshlibrary')
+    apt 'com.jakewharton:butterknife-compiler:8.0.1'
+    compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.google.code.gson:gson:2.7'
     compile 'com.jakewharton:butterknife:8.0.1'
-    apt 'com.jakewharton:butterknife-compiler:8.0.1'
     compile 'com.umeng.analytics:analytics:latest.integration'
+    compile 'com.android.support:support-v4:23.3.0'
 }
