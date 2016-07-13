@@ -3,12 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MiaoTe.iml" filepath="$PROJECT_DIR$/MiaoTe.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MiaoTe.iml" filepath="$PROJECT_DIR$/MiaoTe.iml" />
-      <module fileurl="file://$PROJECT_DIR$/PullToRefreshlibrary/PullToRefreshlibrary.iml" filepath="$PROJECT_DIR$/PullToRefreshlibrary/PullToRefreshlibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/PullToRefreshlibrary/PullToRefreshlibrary.iml" filepath="$PROJECT_DIR$/PullToRefreshlibrary/PullToRefreshlibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/httplibrary/httplibrary.iml" filepath="$PROJECT_DIR$/httplibrary/httplibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/httplibrary/httplibrary.iml" filepath="$PROJECT_DIR$/httplibrary/httplibrary.iml" />
     </modules>
   </component>
