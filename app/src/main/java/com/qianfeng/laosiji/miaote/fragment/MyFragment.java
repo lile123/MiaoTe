@@ -8,12 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.qianfeng.laosiji.miaote.R;
+import com.qianfeng.laosiji.miaote.ui.MyApplication;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class MyFragment extends Fragment {
-
+    MyApplication myApplication;
 
     public MyFragment() {
         // Required empty public constructor
