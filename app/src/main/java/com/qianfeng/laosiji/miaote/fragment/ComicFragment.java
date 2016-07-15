@@ -2,19 +2,20 @@ package com.qianfeng.laosiji.miaote.fragment;
 
 
 import android.os.Bundle;
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.qianfeng.laosiji.miaote.R;
-
 import java.util.ArrayList;
 import java.util.List;
+import com.qianfeng.laosiji.miaote.ui.BaiDuActivity;
+
+import com.qianfeng.laosiji.miaote.R;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,7 +32,9 @@ public class ComicFragment extends Fragment {
     }
 
     public static ComicFragment newInstance() {
+        
         Bundle args = new Bundle();
+        
         ComicFragment fragment = new ComicFragment();
         fragment.setArguments(args);
         return fragment;
@@ -47,10 +50,9 @@ public class ComicFragment extends Fragment {
         bindView();
         return view;
     }
-
     private void initTabLayout() {
         for(int i=0;i<titles.length;i++){
-           mTabLayout.addTab(mTabLayout.newTab().setText(titles[i]));
+            mTabLayout.addTab(mTabLayout.newTab().setText(titles[i]));
         }
     }
 
@@ -87,6 +89,5 @@ public class ComicFragment extends Fragment {
         public CharSequence getPageTitle(int position) {
             return titles[position];
         }
-    }
 
 }

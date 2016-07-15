@@ -32,6 +32,12 @@ android {
         }
     }
 
+    sourceSets {
+        main {
+            jniLibs.srcDir("libs")
+        }
+    }
+
 }
 
 dependencies {
@@ -45,8 +51,11 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.0.1'
     compile 'com.umeng.analytics:analytics:latest.integration'
     compile 'com.android.support:support-v4:23.3.0'
+    compile files('libs/BaiduLBS_Android.jar')
     compile 'com.android.support:design:23.3.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.bigkoo:convenientbanner:2.0.5'
     compile 'com.github.orangegangsters:swipy:1.2.3@aar'
+
+
 }

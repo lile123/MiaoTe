@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.qianfeng.laosiji.miaote.ui.LoginActivity">
+<android.support.v7.widget.Toolbar
+    android:id="@+id/login_toolbar"
+    android:background="#ffcc00"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    >
+<ImageView
+    android:id="@+id/login_back_iv"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/rc_bar_back"/>
+<TextView
+    android:textSize="25sp"
+    android:layout_gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="登录"/>
+</android.support.v7.widget.Toolbar>
+    <ImageView
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/miaote_logo"
+        />
+<FrameLayout
+    android:layout_marginTop="10dp"
+    android:layout_gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <EditText
+        android:drawableLeft="@drawable/id"
+        android:id="@+id/login_user_et"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:hint="  手机/邮箱/用户名"
+
+         >
+    </EditText>
+
+    <ImageButton
+        android:id="@+id/login_deal_ib"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/icon_clear"
+        />
+</FrameLayout>
+    <FrameLayout
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/login_password_et"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:drawableLeft="@drawable/password"
+            android:hint="  密码"
+            android:inputType="numberPassword" >
+        </EditText>
+
+        <CheckBox
+            android:id="@+id/login_show_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="5dp"
+            style="@style/CustomCheckboxTheme"
+            />
+    </FrameLayout>
+    <Button
+        android:id="@+id/login_login_btn"
+        android:background="#ffcc00"
+        android:textSize="15sp"
+        android:text="登录"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="35dp" />
+    <RelativeLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/login_forget_tv"
+            android:text="忘记密码？"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="39dp"
+            android:layout_marginStart="39dp" />
+        <TextView
+            android:id="@+id/login_register_tv"
+            android:text="注册"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="41dp"
+            android:layout_marginEnd="41dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_marginTop="80dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content">
+      <ImageView
+          android:id="@+id/login_wechat_iv"
+          android:src="@drawable/login_wechat"
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/login_xinlang_iv"
+            android:src="@drawable/login_xinlang"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/login_qq_iv"
+            android:src="@drawable/login_qq"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="第三方登录"/>
+</LinearLayout>

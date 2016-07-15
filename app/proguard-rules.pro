@@ -73,3 +73,7 @@ public static final int *;
     public static **[] values();
     public static ** valueOf(java.lang.String);
 }
+#百度混淆
+-keep class com.baidu.** {*;}
+-keep class vi.com.** {*;}
+-dontwarn com.baidu.**
