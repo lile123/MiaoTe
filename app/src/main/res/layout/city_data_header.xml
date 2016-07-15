@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <com.bigkoo.convenientbanner.ConvenientBanner
+            android:id="@+id/city_data_banner"
+            android:layout_width="match_parent"
+            app:layout_scrollFlags="scroll|snap"
+            android:layout_height="120dp">
+
+        </com.bigkoo.convenientbanner.ConvenientBanner>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:layout_marginRight="45dp"
+                android:button="@null"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:text="类型"
+                android:drawableRight="@drawable/exhibition_filter"
+                />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="20dp"
+                android:background="#cccccc"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:layout_marginRight="45dp"
+                android:button="@null"
+                android:textSize="11sp"
+                android:gravity="center"
+                android:text="时间"
+                android:drawableRight="@drawable/exhibition_filter"
+                />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="20dp"
+                android:background="#cccccc"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:layout_marginRight="45dp"
+                android:button="@null"
+                android:textSize="11sp"
+                android:gravity="center"
+                android:text="状态"
+                android:drawableRight="@drawable/exhibition_filter"
+                />
+
+        </RadioGroup>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

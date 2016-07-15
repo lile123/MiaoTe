@@ -1,13 +1,117 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/refresh_srl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.qianfeng.laosiji.miaote.fragment.AllFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.bigkoo.convenientbanner.ConvenientBanner
+                android:id="@+id/city_data_banner"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                app:layout_scrollFlags="scroll|snap">
+
+            </com.bigkoo.convenientbanner.ConvenientBanner>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:button="@null"
+                    android:drawableRight="@drawable/exhibition_filter"
+                    android:gravity="center"
+                    android:text="类型"
+                    android:textSize="11sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="20dp"
+                    android:background="#cccccc" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:button="@null"
+                    android:drawableRight="@drawable/exhibition_filter"
+                    android:gravity="center"
+                    android:text="时间"
+                    android:textSize="11sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="20dp"
+                    android:background="#cccccc" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:button="@null"
+                    android:drawableRight="@drawable/exhibition_filter"
+                    android:gravity="center"
+                    android:text="状态"
+                    android:textSize="11sp" />
+
+            </RadioGroup>
+
+        </android.support.design.widget.AppBarLayout>
+
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.qianfeng.laosiji.miaote.views.CustomListView
+                    android:id="@+id/city_data_clv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </com.qianfeng.laosiji.miaote.views.CustomListView>
+
+
+                <com.qianfeng.laosiji.miaote.views.CustomListView
+                    android:id="@+id/all_other_lv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </com.qianfeng.laosiji.miaote.views.CustomListView>
+
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+</LinearLayout>
+
+
+
