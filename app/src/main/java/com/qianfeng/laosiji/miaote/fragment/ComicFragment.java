@@ -90,4 +90,4 @@ public class ComicFragment extends Fragment {
             return titles[position];
         }
 
-}
+}}
