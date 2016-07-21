@@ -33,6 +33,7 @@ import android.view.animation.LinearInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.handmark.pulltorefresh.library.ILoadingLayout;
@@ -92,7 +93,7 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
 				lp.gravity = scrollDirection == Orientation.VERTICAL ? Gravity.TOP : Gravity.LEFT;
 
 				// Load in labels
-				mPullLabel = context.getString(R.string.pull_to_refresh_from_bottom_pull_label);
+				//mPullLabel = context.getString(R.string.pull_to_refresh_from_bottom_pull_label);
 				mRefreshingLabel = context.getString(R.string.pull_to_refresh_from_bottom_refreshing_label);
 				mReleaseLabel = context.getString(R.string.pull_to_refresh_from_bottom_release_label);
 				break;
@@ -100,7 +101,6 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
 			case PULL_FROM_START:
 			default:
 				lp.gravity = scrollDirection == Orientation.VERTICAL ? Gravity.BOTTOM : Gravity.RIGHT;
-
 				// Load in labels
 				mPullLabel = context.getString(R.string.pull_to_refresh_pull_label);
 				mRefreshingLabel = context.getString(R.string.pull_to_refresh_refreshing_label);
@@ -161,11 +161,11 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
 
 			case PULL_FROM_END:
 				if (attrs.hasValue(R.styleable.PullToRefresh_ptrDrawableEnd)) {
-					imageDrawable = attrs.getDrawable(R.styleable.PullToRefresh_ptrDrawableEnd);
-				} else if (attrs.hasValue(R.styleable.PullToRefresh_ptrDrawableBottom)) {
-					Utils.warnDeprecation("ptrDrawableBottom", "ptrDrawableEnd");
-					imageDrawable = attrs.getDrawable(R.styleable.PullToRefresh_ptrDrawableBottom);
-				}
+				imageDrawable = attrs.getDrawable(R.styleable.PullToRefresh_ptrDrawableEnd);
+			} else if (attrs.hasValue(R.styleable.PullToRefresh_ptrDrawableBottom)) {
+				Utils.warnDeprecation("ptrDrawableBottom", "ptrDrawableEnd");
+				imageDrawable = attrs.getDrawable(R.styleable.PullToRefresh_ptrDrawableBottom);
+			}
 				break;
 		}
 

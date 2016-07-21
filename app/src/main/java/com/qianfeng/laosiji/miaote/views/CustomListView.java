@@ -23,6 +23,6 @@ public class CustomListView extends ListView {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, new MeasureSpec().makeMeasureSpec(Integer.MAX_VALUE >> 2,MeasureSpec.AT_MOST));
+        super.onMeasure(widthMeasureSpec, MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2,MeasureSpec.AT_MOST));
     }
 }

@@ -11,11 +11,14 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.List;
 import com.qianfeng.laosiji.miaote.ui.BaiDuActivity;
 
 import com.qianfeng.laosiji.miaote.R;
+import com.qianfeng.laosiji.miaote.ui.SelectCityActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +29,7 @@ public class ComicFragment extends Fragment {
     private ViewPager mViewPager;
     private String[] titles = new String[]{"全部","参加","结束"};
     private TabLayout mTabLayout;
+    private TextView mTextViewAll;
 
     public ComicFragment() {
         // Required empty public constructor
@@ -45,11 +49,24 @@ public class ComicFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_comic, container, false);
         mViewPager = (ViewPager) view.findViewById(R.id.comic_vp);
         mTabLayout = (TabLayout) view.findViewById(R.id.comic_tl);
+        mTextViewAll = (TextView) view.findViewById(R.id.comic_tv);
         initFragment();
         initTabLayout();
         bindView();
+        initListener();
         return view;
     }
+
+    private void initListener() {
+        mTextViewAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), SelectCityActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
     private void initTabLayout() {
         for(int i=0;i<titles.length;i++){
             mTabLayout.addTab(mTabLayout.newTab().setText(titles[i]));
