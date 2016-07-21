@@ -7,9 +7,6 @@ import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.view.ViewTreeObserver;
 import android.renderscript.Allocation;
 import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
@@ -17,19 +14,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewTreeObserver;
-
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.widget.FrameLayout;
-
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -42,9 +29,6 @@ import com.qianfeng.laosiji.miaote.R;
 import com.qianfeng.laosiji.miaote.bean.DetailsBean;
 import com.qianfeng.laosiji.miaote.fragment.DetailsFragment;
 import com.qianfeng.laosiji.miaote.fragment.ShoppingFragment;
-
-import com.qianfeng.laosiji.miaote.views.CustomListView;
-
 import com.qianfeng.laosiji.miaote.views.CustomScrollView;
 import com.squareup.picasso.Picasso;
 
@@ -53,9 +37,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-
-import java.util.Map;
-
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
