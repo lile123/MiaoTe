@@ -1,117 +1,93 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/refresh_srl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.qianfeng.laosiji.miaote.fragment.AllFragment">
+    android:orientation="vertical"
+    tools:context="com.qianfeng.laosiji.miaote.fragment.AttendFragment">
 
-    <android.support.design.widget.CoordinatorLayout
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/city_data_ptrlv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
-        <android.support.design.widget.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    </com.handmark.pulltorefresh.library.PullToRefreshListView>
 
-            <com.bigkoo.convenientbanner.ConvenientBanner
-                android:id="@+id/city_data_banner"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                app:layout_scrollFlags="scroll|snap">
+    <RadioGroup
+        android:id="@+id/rg_city_data_invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        android:alpha="1"
+        >
 
-            </com.bigkoo.convenientbanner.ConvenientBanner>
+        <RadioButton
+            android:id="@+id/rb_invisible_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableRight="@drawable/selecter_trigon_img"
+            android:gravity="center"
+            android:layout_marginRight="35dp"
+            android:text="类型"
+            android:textSize="11sp"
+             />
 
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:gravity="center"
-                android:orientation="horizontal">
+        <View
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:background="#cccccc" />
 
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="40dp"
-                    android:button="@null"
-                    android:drawableRight="@drawable/exhibition_filter"
-                    android:gravity="center"
-                    android:text="类型"
-                    android:textSize="11sp" />
+        <RadioButton
+            android:id="@+id/rb_invisible_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableRight="@drawable/selecter_trigon_img"
+            android:gravity="center"
+            android:layout_marginRight="35dp"
+            android:text="时间"
+            android:textSize="11sp"
+             />
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="20dp"
-                    android:background="#cccccc" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:background="#cccccc" />
 
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="40dp"
-                    android:button="@null"
-                    android:drawableRight="@drawable/exhibition_filter"
-                    android:gravity="center"
-                    android:text="时间"
-                    android:textSize="11sp" />
+        <RadioButton
+            android:id="@+id/rb_invisible_state"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableRight="@drawable/selecter_trigon_img"
+            android:gravity="center"
+            android:layout_marginRight="35dp"
+            android:text="状态"
+            android:textSize="11sp"
+             />
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="20dp"
-                    android:background="#cccccc" />
+    </RadioGroup>
+    <View
+        android:id="@+id/view_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/rg_city_data_invisible"
+        android:background="#cccccc"/>
 
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="40dp"
-                    android:button="@null"
-                    android:drawableRight="@drawable/exhibition_filter"
-                    android:gravity="center"
-                    android:text="状态"
-                    android:textSize="11sp" />
-
-            </RadioGroup>
-
-        </android.support.design.widget.AppBarLayout>
-
-
-        <android.support.v4.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="none"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <com.qianfeng.laosiji.miaote.views.CustomListView
-                    android:id="@+id/city_data_clv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                </com.qianfeng.laosiji.miaote.views.CustomListView>
+</RelativeLayout>
 
 
-                <com.qianfeng.laosiji.miaote.views.CustomListView
-                    android:id="@+id/all_other_lv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
-                </com.qianfeng.laosiji.miaote.views.CustomListView>
-
-
-            </LinearLayout>
-        </android.support.v4.widget.NestedScrollView>
-
-    </android.support.design.widget.CoordinatorLayout>
-
-
-</LinearLayout>
 
 
 
