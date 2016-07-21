@@ -13,10 +13,20 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+<<<<<<< HEAD
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewTreeObserver;
+=======
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
+>>>>>>> origin/master
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -29,6 +39,10 @@ import com.qianfeng.laosiji.miaote.R;
 import com.qianfeng.laosiji.miaote.bean.DetailsBean;
 import com.qianfeng.laosiji.miaote.fragment.DetailsFragment;
 import com.qianfeng.laosiji.miaote.fragment.ShoppingFragment;
+<<<<<<< HEAD
+=======
+import com.qianfeng.laosiji.miaote.views.CustomListView;
+>>>>>>> origin/master
 import com.qianfeng.laosiji.miaote.views.CustomScrollView;
 import com.squareup.picasso.Picasso;
 
@@ -37,6 +51,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+<<<<<<< HEAD
+=======
+import java.util.Map;
+>>>>>>> origin/master
 
 import de.hdodenhof.circleimageview.CircleImageView;
 

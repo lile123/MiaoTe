@@ -11,11 +11,12 @@
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize">
     <LinearLayout
+        android:layout_margin="10dp"
         android:id="@+id/find_tool_ll"
         android:orientation="horizontal"
        android:gravity="center"
         android:background="#ffffff"
-        android:layout_width="335dp"
+        android:layout_width="match_parent"
         android:layout_height="40dp">
         <ImageView
             android:src="@drawable/exhibition_find"
@@ -28,13 +29,22 @@
               />
     </LinearLayout>
 </android.support.v7.widget.Toolbar>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 <LinearLayout
+    android:layout_marginTop="5dp"
+    android:id="@+id/find_miaoji_ll"
     android:background="#ffffff"
     android:gravity="center_vertical"
-    android:layout_margin="10dp"
+
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="50dp">
+    android:layout_height="40dp">
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,16 +62,19 @@
         android:src="@drawable/go"/>
 </LinearLayout>
     <ImageView
+        android:scaleType="centerCrop"
+        android:id="@+id/find_miaoji_iv"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="300dp"
         android:src="@mipmap/ic_launcher"/>
     <LinearLayout
+        android:layout_marginTop="5dp"
+        android:id="@+id/find_shop_ll"
         android:background="#ffffff"
         android:gravity="center_vertical"
-        android:layout_margin="10dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="40dp">
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -73,23 +86,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <ImageView
+            android:scaleType="centerCrop"
             android:layout_marginLeft="200dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/go"/>
     </LinearLayout>
-    <ScrollView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/find_rlv"
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="wrap_content">
 
-    </ScrollView>
+    </android.support.v7.widget.RecyclerView>
+
     <LinearLayout
+        android:id="@+id/find_center_ll"
         android:background="#ffffff"
         android:gravity="center_vertical"
-        android:layout_margin="10dp"
+        android:layout_marginTop="5dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="40dp">
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -107,7 +124,10 @@
             android:src="@drawable/go"/>
     </LinearLayout>
     <ImageView
+        android:id="@+id/find_center_iv"
         android:src="@mipmap/ic_launcher"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+</LinearLayout>
+    </ScrollView>
 </LinearLayout>
