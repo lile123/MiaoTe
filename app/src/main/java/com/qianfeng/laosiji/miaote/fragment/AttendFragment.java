@@ -14,15 +14,8 @@ import com.qianfeng.laosiji.miaote.R;
  */
 public class AttendFragment extends Fragment {
 
-
-    public AttendFragment() {
-        // Required empty public constructor
-    }
-
     public static AttendFragment newInstance() {
-        
         Bundle args = new Bundle();
-        
         AttendFragment fragment = new AttendFragment();
         fragment.setArguments(args);
         return fragment;

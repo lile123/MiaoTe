@@ -44,9 +44,23 @@ public final class R {
 	public static final class drawable {
 		public static final int default_ptr_flip = 0x7f020000;
 		public static final int default_ptr_rotate = 0x7f020001;
-		public static final int indicator_arrow = 0x7f020002;
-		public static final int indicator_bg_bottom = 0x7f020003;
-		public static final int indicator_bg_top = 0x7f020004;
+		public static final int drawable_waiting = 0x7f020002;
+		public static final int indicator_arrow = 0x7f020003;
+		public static final int indicator_bg_bottom = 0x7f020004;
+		public static final int indicator_bg_top = 0x7f020005;
+		public static final int loadcat_01 = 0x7f020006;
+		public static final int loadcat_02 = 0x7f020007;
+		public static final int loadcat_03 = 0x7f020008;
+		public static final int loadcat_04 = 0x7f020009;
+		public static final int loadcat_05 = 0x7f02000a;
+		public static final int loadcat_06 = 0x7f02000b;
+		public static final int loadcat_07 = 0x7f02000c;
+		public static final int loadcat_08 = 0x7f02000d;
+		public static final int loadcat_09 = 0x7f02000e;
+		public static final int loadcat_10 = 0x7f02000f;
+		public static final int loadcat_11 = 0x7f020010;
+		public static final int loadcat_12 = 0x7f020011;
+		public static final int loadcat_13 = 0x7f020012;
 	}
 	public static final class id {
 		public static final int both = 0x7f070003;
