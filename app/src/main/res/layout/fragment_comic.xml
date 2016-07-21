@@ -1,15 +1,51 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.qianfeng.laosiji.miaote.fragment.ComicFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-<com.qianfeng.laosiji.miaote.views.MyViewPager
-    android:id="@+id/comic_vp"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-</com.qianfeng.laosiji.miaote.views.MyViewPager>
 
-</FrameLayout>
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#ffcc00"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/comic_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/location_down"
+                    android:text="全  部"
+                    android:textSize="12sp" />
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/comic_tl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:tabIndicatorColor="#000000"
+                    app:tabTextColor="#000000"></android.support.design.widget.TabLayout>
+
+                <ImageView
+                    android:id="@+id/comic_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:src="@drawable/my_home_title_b" />
+
+            </android.support.v7.widget.Toolbar>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/comic_vp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </android.support.v4.view.ViewPager>
+    
+
+
+</LinearLayout>
