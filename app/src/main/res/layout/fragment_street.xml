@@ -1,13 +1,37 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.qianfeng.laosiji.miaote.fragment.StreetFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/login_toolbar"
+        android:background="#ffcc00"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="345" />
+        android:layout_height="?attr/actionBarSize"
+        >
 
-</FrameLayout>
+        <TextView
+            android:textSize="25sp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="喵街"/>
+        <ImageView
+            android:layout_marginRight="15dp"
+            android:src="@drawable/fabu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            />
+    </android.support.v7.widget.Toolbar>
+
+<com.handmark.pulltorefresh.library.PullToRefreshListView
+    android:id="@+id/street_prf_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+</com.handmark.pulltorefresh.library.PullToRefreshListView>
+
+
+</LinearLayout>
