@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.qianfeng.laosiji.miaote.ui.ShopStoreActivity">
+<android.support.v7.widget.Toolbar
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="#ffcc00"
+    android:id="@+id/view">
+    <ImageView
+        android:onClick="onBack"
+        android:id="@+id/find_shop_back_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/rc_bar_back"/>
+<TextView
+    android:textSize="25sp"
+    android:layout_gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="商城"/>
+</android.support.v7.widget.Toolbar>
+<com.handmark.pulltorefresh.library.PullToRefreshGridView
+    android:id="@+id/find_shop_prg"
+    android:numColumns="2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/view">
+
+</com.handmark.pulltorefresh.library.PullToRefreshGridView>
+</RelativeLayout>
