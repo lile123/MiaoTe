@@ -5,6 +5,9 @@
     <color name="colorAccent">#FF4081</color>
 
 
+    <color name="half_transparent">#8f000000</color>
+    <color name="yanse">#ffcc00</color><!--白色 -->
+    <color name="yansetouming">#00ffffff</color><!--白色 -->
     <color name="white">#FFFFFF</color><!--白色 -->
     <color name="ivory">#FFFFF0</color><!--象牙色 -->
     <color name="lightyellow">#FFFFE0</color><!--亮黄色-->

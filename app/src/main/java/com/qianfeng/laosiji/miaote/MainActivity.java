@@ -1,5 +1,6 @@
 package com.qianfeng.laosiji.miaote;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -11,6 +12,7 @@ import com.qianfeng.laosiji.miaote.fragment.ComicFragment;
 import com.qianfeng.laosiji.miaote.fragment.FindFragment;
 import com.qianfeng.laosiji.miaote.fragment.MyFragment;
 import com.qianfeng.laosiji.miaote.fragment.StreetFragment;
+import com.qianfeng.laosiji.miaote.ui.LoginActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +55,9 @@ public class MainActivity extends BaseActivity implements  RadioGroup.OnCheckedC
      viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
          @Override
          public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+           if(positionOffset>22){
 
+           }
          }
 
          @Override
@@ -69,6 +73,8 @@ public class MainActivity extends BaseActivity implements  RadioGroup.OnCheckedC
                      radio_find.setChecked(true);
                      break;
                  case 3:
+                     Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                     startActivity(intent);
                      radio_my.setChecked(true);
                      break;
              }
