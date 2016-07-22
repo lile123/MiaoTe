@@ -137,6 +137,7 @@
                 android:drawablePadding="5dp"
                 android:drawableLeft="@drawable/location_g"
                 android:text="3460-"
+                android:textSize="12sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -145,6 +146,7 @@
                 android:layout_marginBottom="27dp"
                 android:id="@+id/street_info_type_info_location_tv"/>
             <TextView
+                android:textSize="12sp"
                 android:drawableLeft="@drawable/tiem"
                 android:drawablePadding="5dp"
                 android:id="@+id/street_info_type_info_time_tv"

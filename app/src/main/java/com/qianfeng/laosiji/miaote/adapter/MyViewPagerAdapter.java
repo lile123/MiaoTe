@@ -12,14 +12,23 @@ import java.util.List;
  */
 public class MyViewPagerAdapter extends PagerAdapter{
     private List<ImageView> data ;
+    public MyViewPagerAdapter(List<ImageView> data) {
+        this.data = data;
+    }
     @Override
     public int getCount() {
-        return 0;
+        return data!=null?data.size():0;
     }
 
+    /**
+     * 返回 当前页面对要进入的页面是否为同一个对象
+     * @param view
+     * @param object
+     * @return
+     */
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        return false;
+        return view==object;//固定的写法
     }
     /**
      * 把页面加入到ViewPager

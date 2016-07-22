@@ -102,7 +102,7 @@ public class StreetFragment extends Fragment {
 
             @Override
             public void onPullUpToRefresh(PullToRefreshBase<ListView> refreshView) {
-
+                i=1;
                 i++;
                 String value = String.valueOf(i);
                 map.put("p",value);
