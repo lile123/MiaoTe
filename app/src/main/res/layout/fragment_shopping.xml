@@ -1,13 +1,98 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.qianfeng.laosiji.miaote.fragment.ShoppingFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:drawableLeft="@drawable/hot_tag"
+            android:drawablePadding="10dp"
+            android:text="热门标签"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textColor="#6666cc"
+            android:textSize="16sp"
+            android:drawablePadding="10dp"
+            android:text="我也来发条喵街"
+            android:drawableRight="@drawable/exhibition_photosend"/>
 
-</FrameLayout>
+    </RelativeLayout>
+    <com.qianfeng.laosiji.miaote.views.XCFlowLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="喵特一夏"
+            android:layout_margin="5dp"
+            android:background="@drawable/input_focused"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cos"
+            android:layout_margin="5dp"
+            android:background="@drawable/input_focused"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="日常"
+            android:layout_margin="5dp"
+            android:background="@drawable/input_focused"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="求约展"
+            android:layout_margin="5dp"
+            android:background="@drawable/input_focused"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="场照"
+            android:layout_margin="5dp"
+            android:background="@drawable/input_focused"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="吐槽"
+            android:layout_margin="5dp"
+            android:background="@drawable/input_focused"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="求拍肩"
+            android:layout_margin="5dp"
+            android:background="@drawable/input_focused"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="卖个萌"
+            android:layout_margin="5dp"
+            android:background="@drawable/input_focused"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="暑假"
+            android:layout_margin="5dp"
+            android:background="@drawable/input_focused"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="猫粮"
+            android:layout_margin="5dp"
+            android:background="@drawable/input_focused"/>
+
+    </com.qianfeng.laosiji.miaote.views.XCFlowLayout>
+
+</LinearLayout>

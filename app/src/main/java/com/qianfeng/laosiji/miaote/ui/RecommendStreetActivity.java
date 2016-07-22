@@ -89,7 +89,6 @@ public class RecommendStreetActivity extends AppCompatActivity {
         tv_commend.setText(text);
         StretchUtil.getInstance(tv_commend,7,btn).initStretch();
 
-
     }
 
     private void initData() {

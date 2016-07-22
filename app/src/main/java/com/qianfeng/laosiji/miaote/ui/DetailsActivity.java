@@ -83,6 +83,8 @@ public class DetailsActivity extends BaseActivity {
     private String userThree;
     private String userFour;
     private String userFive;
+    private Bundle bundle = new Bundle();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +94,8 @@ public class DetailsActivity extends BaseActivity {
         String eid = intent.getStringExtra("eid");
         map.put("eid", eid);
         map.put("p", "1");
+        bundle.putString("eid",eid);
+        bundle.putString("p","1");
         initData();
     }
 
@@ -254,8 +258,9 @@ public class DetailsActivity extends BaseActivity {
 
     private void initFragment() {
         list = new ArrayList<>();
-        list.add(DetailsFragment.newInstance());
-        list.add(ShoppingFragment.newInstance());
+        bundle.putString("url",URL_Details);
+        list.add(DetailsFragment.newInstance(bundle));
+        list.add(ShoppingFragment.newInstance(bundle));
     }
 
 

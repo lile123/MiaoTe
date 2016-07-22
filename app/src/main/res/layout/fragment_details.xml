@@ -4,24 +4,45 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.qianfeng.laosiji.miaote.fragment.DetailsFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="详细地址:"/>
+        <TextView
+            android:id="@+id/tv_details_detail_addr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="隆中大道贾洲生态园"/>
 
-    <!-- TODO: Update blank fragment layout -->
+    </LinearLayout>
     <TextView
+        android:id="@+id/tv_details_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="名称： CM动漫盛典 No.3 副标题： 襄阳DCT26 偶像公社 首次登台公演！ 偶像育成计划选拔赛！ 时间：2016年8月6日 地点：襄城区隆中大道贾洲生态园（万山安定医院斜对面） 35元普通票 50元VIP（含特色自助餐） 室内场地 全天空调 生态园林 VR游戏体验 甜品站 自助餐供应 美漫专区 CM动漫俱乐部群 483684175 CM官方社团招募群515615050 新浪微博:CM动漫盛典"
+        />
+
+    <Button
+        android:background="@null"
+        android:id="@+id/btn_details_show_more"
+        android:textColor="@color/red"
+        android:text="显示更多"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <com.qianfeng.laosiji.miaote.views.MyListView
+        android:id="@+id/mlv_intelligence"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:src="@drawable/loadcat_01"/>
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:src="@drawable/loadcat_01"/>
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:src="@drawable/loadcat_01"/>
+    </com.qianfeng.laosiji.miaote.views.MyListView>
 
 </LinearLayout>
