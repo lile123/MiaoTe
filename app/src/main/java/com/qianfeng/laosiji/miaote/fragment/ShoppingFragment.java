@@ -15,8 +15,9 @@ import com.qianfeng.laosiji.miaote.R;
 public class ShoppingFragment extends Fragment {
 
 
-    public static ShoppingFragment newInstance() {
+    public static ShoppingFragment newInstance(Bundle bundle) {
         ShoppingFragment fragment = new ShoppingFragment();
+        fragment.setArguments(bundle);
         return fragment;
     }
 
