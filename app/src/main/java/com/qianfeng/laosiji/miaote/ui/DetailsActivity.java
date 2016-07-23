@@ -15,8 +15,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -27,6 +29,7 @@ import com.google.gson.Gson;
 import com.qianfeng.laosiji.miaote.BaseActivity;
 import com.qianfeng.laosiji.miaote.R;
 import com.qianfeng.laosiji.miaote.bean.DetailsBean;
+import com.qianfeng.laosiji.miaote.constant.URLConsatant;
 import com.qianfeng.laosiji.miaote.fragment.DetailsFragment;
 import com.qianfeng.laosiji.miaote.fragment.ShoppingFragment;
 import com.qianfeng.laosiji.miaote.views.CustomScrollView;
@@ -38,11 +41,11 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+import cn.sharesdk.framework.ShareSDK;
+import cn.sharesdk.onekeyshare.OnekeyShare;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class DetailsActivity extends BaseActivity {
-    public static final String URL_DOMAIN = "http://api.nyato.com";
-    public static final String URL_Details = "http://api.nyato.com/index.php?app=android&mod=Expo&act=ex_detail&&token=b9297bc832265b95d68f24c9b65430bc&app_version=3.4&tickets=1";
 
     private ViewPager vpDetails;
     private List<Fragment> list;
@@ -85,6 +88,10 @@ public class DetailsActivity extends BaseActivity {
     private String userFive;
     private Bundle bundle = new Bundle();
     private ImageView ivShare;
+    private Button button;
+    private String coordinate;
+    private String[] locate;
+    private ImageView ivBack;
 
 
     @Override
@@ -101,7 +108,7 @@ public class DetailsActivity extends BaseActivity {
     }
 
     private void initData() {
-        OkHttpTool.newInstance().start(URL_Details).post(map).callback(new IOKCallBack() {
+        OkHttpTool.newInstance().start(URLConsatant.URL_Details).post(map).callback(new IOKCallBack() {
             @Override
             public void success(String result) {
                 if (result.length() < 145) {
@@ -116,6 +123,8 @@ public class DetailsActivity extends BaseActivity {
                 startTime = detailsBean.getInfo().getStart_time();
                 endTime = detailsBean.getInfo().getEnd_time();
                 location = detailsBean.getInfo().getLocation();
+                coordinate = detailsBean.getInfo().getCoordinate();
+                locate =  coordinate.split("\\,");
                 userOne = detailsBean.getApply_user().get(0).getUavatar();
                 userTwo = detailsBean.getApply_user().get(1).getUavatar();
                 userThree = detailsBean.getApply_user().get(2).getUavatar();
@@ -129,10 +138,53 @@ public class DetailsActivity extends BaseActivity {
     }
 
     private void initListener() {
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+        //跳转百度地图
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(DetailsActivity.this,BaiDuActivity.class);
+//                intent.putExtra("latitude",locate[1]);
+//                intent.putExtra("longitude",locate[0]);
+//                startActivity(intent);
+//            }
+//        });
         ivShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ShareSDK.initSDK(DetailsActivity.this);
+                OnekeyShare oks = new OnekeyShare();
+                //关闭sso授权
+                oks.disableSSOWhenAuthorize();
+
+// 分享时Notification的图标和文字  2.5.9以后的版本不调用此方法
+                //oks.setNotification(R.drawable.ic_launcher, getString(R.string.app_name));
+                // title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间使用
+                oks.setTitle("3456789");
+                // titleUrl是标题的网络链接，仅在人人网和QQ空间使用
+                oks.setTitleUrl("http://sharesdk.cn");
+                // text是分享文本，所有平台都需要这个字段
+                oks.setText("我是分享文本");
+                // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
+                //oks.setImagePath("/sdcard/test.jpg");//确保SDcard下面存在此张图片
+                // url仅在微信（包括好友和朋友圈）中使用
+                oks.setUrl("http://sharesdk.cn");
+                // comment是我对这条分享的评论，仅在人人网和QQ空间使用
+                oks.setComment("我是测试评论文本");
+                // site是分享此内容的网站名称，仅在QQ空间使用
+                oks.setSite(getString(R.string.app_name));
+                // siteUrl是分享此内容的网站地址，仅在QQ空间使用
+                oks.setSiteUrl("http://sharesdk.cn");
+
+// 启动分享GUI
+                oks.show(DetailsActivity.this);
             }
+
         });
         csvDetails.setOnScrollListener(new CustomScrollView.IOnScroll() {
             @Override
@@ -220,7 +272,9 @@ public class DetailsActivity extends BaseActivity {
         initFragment();
         llInvisible = (LinearLayout) findViewById(R.id.ll_details_invisible);
         csvDetails = (CustomScrollView) findViewById(R.id.csv_details);
-        ivShare = (ImageView)findViewById(R.id.iv_details_name_head);
+        ivShare = (ImageView) findViewById(R.id.iv_details_name_head);
+        button = (Button) findViewById(R.id.btn_tv_details_baidu);
+        ivBack = (ImageView)findViewById(R.id.iv_details_back);
         ivLogo = (ImageView) findViewById(R.id.iv_details_logo);
         ivBackGround = (ImageView) findViewById(R.id.iv_details_blur);
         tvHeadName = (TextView) findViewById(R.id.tv_details_name_head);
@@ -246,8 +300,8 @@ public class DetailsActivity extends BaseActivity {
         ivDetailsInvisible = (ImageView) findViewById(R.id.iv_details_detail_heng_invisible);
         ivShoppingInvisible = (ImageView) findViewById(R.id.iv_details_shopping_heng_invisible);
         setSelectedFragment(0);
-        Picasso.with(DetailsActivity.this).load(URL_DOMAIN + cover).into(ivLogo);
-        Picasso.with(DetailsActivity.this).load(URL_DOMAIN + cover).into(ivBackGround);
+        Picasso.with(DetailsActivity.this).load(URLConsatant.URL_BASE + cover).into(ivLogo);
+        Picasso.with(DetailsActivity.this).load(URLConsatant.URL_BASE + cover).into(ivBackGround);
         applyBlur();
         tvName.setText(name);
         tvHeadName.setText(name);
@@ -264,7 +318,7 @@ public class DetailsActivity extends BaseActivity {
 
     private void initFragment() {
         list = new ArrayList<>();
-        bundle.putString("url", URL_Details);
+        bundle.putString("url", URLConsatant.URL_Details);
         list.add(DetailsFragment.newInstance(bundle));
         list.add(ShoppingFragment.newInstance(bundle));
     }

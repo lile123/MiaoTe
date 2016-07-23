@@ -1,5 +1,6 @@
 package com.qianfeng.laosiji.miaote.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -41,6 +42,9 @@ public class BaiDuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bai_du);
+        Intent intent = getIntent();
+        float latitude = Float.parseFloat(intent.getStringExtra("latitude"));
+        float longitude  = Float.parseFloat(intent.getStringExtra("longitude"));
         locationClient = new LocationClient(getApplicationContext());
         initLocation();//声明LocationClient类
         /**

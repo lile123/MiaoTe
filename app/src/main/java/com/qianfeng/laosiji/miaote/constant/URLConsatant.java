@@ -19,6 +19,12 @@ public class URLConsatant {
      */
     public static final String URL_FINISH = "http://api.nyato.com/index.php?app=android&mod=Expo&act=expired_list&&token=36ac12bbc663a58524277e2093718bcd&app_version=3.4&tickets=1";
 
+
+    /**
+     * 详情页面
+     */
+    public static final String URL_Details = "http://api.nyato.com/index.php?app=android&mod=Expo&act=ex_detail&&token=b9297bc832265b95d68f24c9b65430bc&app_version=3.4&tickets=1";
+
     /**
      * 漫展全部页面数据
      */
