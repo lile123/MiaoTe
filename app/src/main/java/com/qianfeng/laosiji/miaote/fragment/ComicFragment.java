@@ -15,38 +15,42 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.qianfeng.laosiji.miaote.ui.BaiDuActivity;
 
 import com.qianfeng.laosiji.miaote.R;
 import com.qianfeng.laosiji.miaote.ui.SelectCityActivity;
+import com.qianfeng.laosiji.miaote.views.AssembleUrl;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ComicFragment extends Fragment {
+    public static AssembleUrl mAssembleUrl;
     private List<Fragment> fragmentList;
     private MyAdapter adapter;
     private ViewPager mViewPager;
-    private String[] titles = new String[]{"全部","参加","结束"};
+    private String[] titles = new String[]{"全部", "参加", "结束"};
     private TabLayout mTabLayout;
     private TextView mTextViewAll;
+    private AllFragment allFragment;
+    private FinishFragment finishFragment;
 
-    public ComicFragment() {
-        // Required empty public constructor
-    }
 
     public static ComicFragment newInstance() {
-        
+
         Bundle args = new Bundle();
-        
+
         ComicFragment fragment = new ComicFragment();
         fragment.setArguments(args);
         return fragment;
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_comic, container, false);
+        mAssembleUrl = AssembleUrl.newInstance("0", "0", "1");
         mViewPager = (ViewPager) view.findViewById(R.id.comic_vp);
         mTabLayout = (TabLayout) view.findViewById(R.id.comic_tl);
         mTextViewAll = (TextView) view.findViewById(R.id.comic_tv);
@@ -62,13 +66,27 @@ public class ComicFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), SelectCityActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, 0);
             }
         });
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (null != data) {
+            String cid = data.getStringExtra("cid");
+            String pid = data.getStringExtra("pid");
+            String cityName = data.getStringExtra("cityName");
+            mAssembleUrl.setProvince(pid);
+            mAssembleUrl.setCity(cid);
+            mTextViewAll.setText(cityName);
+            allFragment.refresh();
+            finishFragment.refresh();
+        }
+    }
+
     private void initTabLayout() {
-        for(int i=0;i<titles.length;i++){
+        for (int i = 0; i < titles.length; i++) {
             mTabLayout.addTab(mTabLayout.newTab().setText(titles[i]));
         }
     }
@@ -81,12 +99,14 @@ public class ComicFragment extends Fragment {
 
     private void initFragment() {
         fragmentList = new ArrayList<>();
-        fragmentList.add(AllFragment.newInstance());
+        allFragment = AllFragment.newInstance();
+        finishFragment = FinishFragment.newInstance();
+        fragmentList.add(allFragment);
         fragmentList.add(AttendFragment.newInstance());
-        fragmentList.add(FinishFragment.newInstance());
+        fragmentList.add(finishFragment);
     }
 
-    class MyAdapter extends FragmentPagerAdapter{
+    class MyAdapter extends FragmentPagerAdapter {
 
         public MyAdapter(FragmentManager fm) {
             super(fm);
@@ -107,4 +127,5 @@ public class ComicFragment extends Fragment {
             return titles[position];
         }
 
-}}
+    }
+}

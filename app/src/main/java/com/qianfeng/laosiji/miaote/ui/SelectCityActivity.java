@@ -1,9 +1,12 @@
 package com.qianfeng.laosiji.miaote.ui;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -15,13 +18,13 @@ import com.google.gson.internal.LinkedHashTreeMap;
 import com.qianfeng.laosiji.miaote.BaseActivity;
 import com.qianfeng.laosiji.miaote.R;
 import com.qianfeng.laosiji.miaote.bean.HotCityBean;
+import com.qianfeng.laosiji.miaote.constant.URLConsatant;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class SelectCityActivity extends BaseActivity {
-    public static final String URL_HOT_CITY = "http://api.nyato.com/index.php?app=android&mod=Expo&act=getHotCitys&&token=2bc4c945edb32c64c7f4f9853eb8e463&app_version=3.4&tickets=1";
     private TextView mTextViewCurrent;
     private ListView mCustomListView;
     private List<HotCityBean.CitysBean> list = new ArrayList<>();
@@ -35,11 +38,28 @@ public class SelectCityActivity extends BaseActivity {
         setContentView(R.layout.activity_select_city);
         initView();
         initData();
+        initListener();
+    }
 
+    private void initListener() {
+        mCustomListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String cid = list.get(position).getCid();
+                String pid = list.get(position).getPid();
+                String cityName = list.get(position).getName();
+                Intent intent = new Intent();
+                intent.putExtra("cid", cid);
+                intent.putExtra("pid", pid);
+                intent.putExtra("cityName", cityName);
+                SelectCityActivity.this.setResult(1, intent);
+                SelectCityActivity.this.finish();
+            }
+        });
     }
 
     private void initData() {
-        OkHttpTool.newInstance().start(URL_HOT_CITY).callback(new IOKCallBack() {
+        OkHttpTool.newInstance().start(URLConsatant.URL_HOT_CITY).callback(new IOKCallBack() {
             @Override
             public void success(String result) {
                 if(null == result){

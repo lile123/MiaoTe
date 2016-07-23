@@ -19,11 +19,11 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Matrix;
 import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView.ScaleType;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
@@ -81,10 +81,6 @@ public class RotateLoadingLayout extends LoadingLayout {
 	@Override
 	protected void refreshingImpl() {
 		mHeaderImage.startAnimation(mRotateAnimation);
-		Log.d("lile+++++", "pullToRefreshImpl: refreshingImpl"+mHeaderText);
-		if(mHeaderText !=null) {
-			mHeaderText.setText("加载中...");
-		}
 	}
 
 	@Override
@@ -105,7 +101,6 @@ public class RotateLoadingLayout extends LoadingLayout {
 		// NO-OP
 		FrameLayout mInnerLayout = (FrameLayout) findViewById(R.id.fl_inner);
 		mHeaderText = (TextView) mInnerLayout.findViewById(R.id.pull_to_refresh_text);
-
 		mHeaderText.setText("加载中...");
 	}
 

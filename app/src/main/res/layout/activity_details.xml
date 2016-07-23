@@ -35,6 +35,7 @@
             android:textSize="20sp" />
 
         <ImageView
+            android:id="@+id/iv_details_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -42,6 +43,7 @@
             android:src="@drawable/rc_bar_back_w" />
 
         <ImageView
+            android:id="@+id/iv_details_name_head"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -168,6 +170,7 @@
                     android:text="参加漫展" />
 
                 <Button
+                    android:id="@+id/btn_tv_details_baidu"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"

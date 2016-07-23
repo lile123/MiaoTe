@@ -90,7 +90,8 @@
         android:textColor="@color/selecter_month_btn_color"
         android:background="@drawable/selecter_month_btn_bg"
         android:text="7"
-        /><RadioButton
+        />
+        <RadioButton
         android:id="@+id/rb_month_aug"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
