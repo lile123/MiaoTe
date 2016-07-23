@@ -42,7 +42,7 @@ public class PhotoWallActivity extends AppCompatActivity {
             ViewGroup.LayoutParams params=new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT);
             imageView.setLayoutParams(params);
             //设置图片铺满屏幕
-            imageView.setScaleType(ImageView.ScaleType.CENTER);
+            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             Glide.with(PhotoWallActivity.this).load(URLConsatant.URL_BASE + urls[i]).into(imageView);
             data.add(imageView);
         }

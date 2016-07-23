@@ -19,5 +19,6 @@ public class PhotoActivity extends AppCompatActivity {
         String url =intent.getStringExtra("url");
         ImageView iv_show = (ImageView) findViewById(R.id.photo_iv);
         Picasso.with(this).load(URLConsatant.URL_BASE+url).into(iv_show);
+
     }
 }
