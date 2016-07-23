@@ -12,6 +12,7 @@ import com.qianfeng.laosiji.miaote.fragment.ComicFragment;
 import com.qianfeng.laosiji.miaote.fragment.FindFragment;
 import com.qianfeng.laosiji.miaote.fragment.MyFragment;
 import com.qianfeng.laosiji.miaote.fragment.StreetFragment;
+import com.qianfeng.laosiji.miaote.ui.BaiDuActivity;
 import com.qianfeng.laosiji.miaote.ui.LoginActivity;
 
 import java.util.ArrayList;
@@ -71,6 +72,8 @@ public class MainActivity extends BaseActivity implements  RadioGroup.OnCheckedC
                      break;
                  case 2:
                      radio_find.setChecked(true);
+                     Intent intent2 = new Intent(MainActivity.this, BaiDuActivity.class);
+                     startActivity(intent2);
                      break;
                  case 3:
                      Intent intent = new Intent(MainActivity.this, LoginActivity.class);
