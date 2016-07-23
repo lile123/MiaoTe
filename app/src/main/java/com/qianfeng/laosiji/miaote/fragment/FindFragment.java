@@ -19,6 +19,7 @@ import com.qianfeng.laosiji.miaote.R;
 import com.qianfeng.laosiji.miaote.adapter.MyRecyclerViewAdapter;
 import com.qianfeng.laosiji.miaote.bean.Find;
 import com.qianfeng.laosiji.miaote.constant.URLConsatant;
+import com.qianfeng.laosiji.miaote.ui.ReportActivity;
 import com.qianfeng.laosiji.miaote.ui.ReportInfoActivity;
 import com.qianfeng.laosiji.miaote.ui.ShopStoreActivity;
 import com.qianfeng.laosiji.miaote.ui.TaskActivity;
@@ -94,7 +95,8 @@ public class FindFragment extends Fragment {
         ll_miaoji.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getActivity(), ReportActivity.class);
+                startActivity(intent);
             }
         });
 

@@ -39,10 +39,10 @@ public class PhotoWallActivity extends AppCompatActivity {
     private void initData() {
         for(int i =0;i<urls.length;i++){
             ImageView imageView=new ImageView(this);
-            ViewGroup.LayoutParams params=new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
+            ViewGroup.LayoutParams params=new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT);
             imageView.setLayoutParams(params);
             //设置图片铺满屏幕
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imageView.setScaleType(ImageView.ScaleType.CENTER);
             Glide.with(PhotoWallActivity.this).load(URLConsatant.URL_BASE + urls[i]).into(imageView);
             data.add(imageView);
         }

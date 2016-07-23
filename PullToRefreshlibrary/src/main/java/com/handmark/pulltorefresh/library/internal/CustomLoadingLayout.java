@@ -22,6 +22,7 @@ public class CustomLoadingLayout extends LoadingLayout {
         mHeaderImage.setLayoutParams(params);
         mHeaderImage.setImageResource(R.drawable.drawable_waiting);
         mAnimationDrawable = (AnimationDrawable) mHeaderImage.getDrawable();
+
     }
 
     @Override
