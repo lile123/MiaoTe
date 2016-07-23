@@ -8,6 +8,26 @@ public class URLConsatant {
      * 基础连接
      */
     public static final String URL_BASE = "http://api.nyato.com";
+
+    /**
+     * 获取热门城市列表
+     */
+    public static final String URL_HOT_CITY = "http://api.nyato.com/index.php?app=android&mod=Expo&act=getHotCitys&&token=2bc4c945edb32c64c7f4f9853eb8e463&app_version=3.4&tickets=1";
+
+    /**
+     * 漫展完成页面数据
+     */
+    public static final String URL_FINISH = "http://api.nyato.com/index.php?app=android&mod=Expo&act=expired_list&&token=36ac12bbc663a58524277e2093718bcd&app_version=3.4&tickets=1";
+
+    /**
+     * 漫展全部页面数据
+     */
+    public static final String URL_CITY_DATA = "http://api.nyato.com/index.php?app=android&mod=Expo&act=ex_list&&token=07a34d80b5457faf160e562266bc4770&app_version=3.4&tickets=1";
+
+    /**
+     * 广告栏
+     */
+    public static final String URL_BANNER = "http://api.nyato.com/index.php?app=android&mod=Index&act=getSlide&token=e3e50f189265d749cdce39e1b9491a63&app_version=3.4&tickets=1";
     /**
      * 喵街list
      */
@@ -40,4 +60,6 @@ public class URLConsatant {
      *推荐喵街
      */
     public static final String URL_STREET_RECOMMEND ="http://api.nyato.com/index.php?app=android&mod=Street&act=sencePhotoList&&token=3920b3cc52f620d74400e26e28db5065&app_version=3.4&tickets=1";
+
+
 }

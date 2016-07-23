@@ -84,6 +84,7 @@ public class DetailsActivity extends BaseActivity {
     private String userFour;
     private String userFive;
     private Bundle bundle = new Bundle();
+    private ImageView ivShare;
 
 
     @Override
@@ -94,13 +95,12 @@ public class DetailsActivity extends BaseActivity {
         String eid = intent.getStringExtra("eid");
         map.put("eid", eid);
         map.put("p", "1");
-        bundle.putString("eid",eid);
-        bundle.putString("p","1");
+        bundle.putString("eid", eid);
+        bundle.putString("p", "1");
         initData();
     }
 
     private void initData() {
-
         OkHttpTool.newInstance().start(URL_Details).post(map).callback(new IOKCallBack() {
             @Override
             public void success(String result) {
@@ -129,6 +129,11 @@ public class DetailsActivity extends BaseActivity {
     }
 
     private void initListener() {
+        ivShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
         csvDetails.setOnScrollListener(new CustomScrollView.IOnScroll() {
             @Override
             public void onScroll(int l, int t, int oldl, int oldt) {
@@ -136,9 +141,9 @@ public class DetailsActivity extends BaseActivity {
                     float alpha = (float) t / 600;
                     tbHeader.setAlpha(alpha);
                 }
-                if(t<370){
+                if (t < 370) {
                     ivBackGround.setVisibility(View.VISIBLE);
-                }else{
+                } else {
                     ivBackGround.setVisibility(View.GONE);
                 }
                 if (t > 910) {
@@ -215,6 +220,7 @@ public class DetailsActivity extends BaseActivity {
         initFragment();
         llInvisible = (LinearLayout) findViewById(R.id.ll_details_invisible);
         csvDetails = (CustomScrollView) findViewById(R.id.csv_details);
+        ivShare = (ImageView)findViewById(R.id.iv_details_name_head);
         ivLogo = (ImageView) findViewById(R.id.iv_details_logo);
         ivBackGround = (ImageView) findViewById(R.id.iv_details_blur);
         tvHeadName = (TextView) findViewById(R.id.tv_details_name_head);
@@ -258,7 +264,7 @@ public class DetailsActivity extends BaseActivity {
 
     private void initFragment() {
         list = new ArrayList<>();
-        bundle.putString("url",URL_Details);
+        bundle.putString("url", URL_Details);
         list.add(DetailsFragment.newInstance(bundle));
         list.add(ShoppingFragment.newInstance(bundle));
     }
@@ -300,7 +306,7 @@ public class DetailsActivity extends BaseActivity {
 
         float radius = 25;
 
-        Bitmap overlay = Bitmap.createBitmap( (view.getMeasuredWidth()),
+        Bitmap overlay = Bitmap.createBitmap((view.getMeasuredWidth()),
                 (view.getMeasuredHeight()), Bitmap.Config.ARGB_8888);
 
         Canvas canvas = new Canvas(overlay);
@@ -324,7 +330,7 @@ public class DetailsActivity extends BaseActivity {
 
         overlayAlloc.copyTo(overlay);
 
-        ((ImageView)view).setImageDrawable(new BitmapDrawable(
+        ((ImageView) view).setImageDrawable(new BitmapDrawable(
                 getResources(), overlay));
 
         rs.destroy();
