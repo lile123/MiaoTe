@@ -81,6 +81,7 @@ public class RotateLoadingLayout extends LoadingLayout {
 	@Override
 	protected void refreshingImpl() {
 		mHeaderImage.startAnimation(mRotateAnimation);
+		mHeaderText.setText("加载中...");
 	}
 
 	@Override

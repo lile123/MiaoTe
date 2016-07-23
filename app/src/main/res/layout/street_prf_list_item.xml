@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_margin="5dp"
         android:id="@+id/street_civ"
         android:src="@mipmap/ic_launcher"
         android:layout_width="40dp"
@@ -45,13 +46,15 @@
         android:layout_height="1dp"
         android:background="#11111111"/>
     <TextView
+        android:textSize="15sp"
+        android:layout_marginLeft="10dp"
         android:id="@+id/street_content_tv"
         android:text="1234567890-"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <com.qianfeng.laosiji.miaote.views.CustomGridView
-
+        android:layout_marginLeft="10dp"
         android:numColumns="4"
         android:id="@+id/street_gv"
         android:layout_width="match_parent"

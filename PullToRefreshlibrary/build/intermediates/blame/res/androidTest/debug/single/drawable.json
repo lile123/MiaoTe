@@ -8,6 +8,10 @@
         "source": "E:\\AndroidTest\\MiaoTe\\PullToRefreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\drawable_waiting.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProjects\\MiaoTe\\PullToRefreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\drawable_waiting.xml",
+        "source": "D:\\AndroidStudioProjects\\MiaoTe\\PullToRefreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\drawable_waiting.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProjects\\MiaoTe\\PullToRefreshlibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
         "source": "D:\\AndroidStudioProjects\\MiaoTe\\PullToRefreshlibrary\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
     },
