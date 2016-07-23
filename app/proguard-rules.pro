@@ -20,6 +20,7 @@
 
 -dontpreverify #不进行预先校验
 -allowaccessmodification
+-keepattributes EnclosingMethod
 -optimizations !code/simplification/arithmetic
 -keepattributes *Annotation* #保证使用注解注释的方法不被混淆
 #保证某一个具体的类不被混淆
